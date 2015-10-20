@@ -236,22 +236,22 @@ def show_player_shots():
 def show_stats():
     for k in xrange(0, 2):
         if k is 0:
-            board = aiBoard
+            board = playerBoard
             print 'AI stats',
         else:
-            board = playerBoard
+            board = aiBoard
             print 'Player stats',
         hits = 0
         miss = 0
         for i in xrange(0, 100):
             val = board[i]
-            if val is 9:
+            if val is 8:
                 miss += 1
             if val is 9:
                 hits += 1
         count = hits + miss
         acc = (float(hits) / float(count)) * 100
-        print ': shots: ', count, ' hits: ', hits, ' misses: ', miss, ' accuracy: ', acc, '%'
+        print ' hits:', hits, ' misses:', miss, ' accuracy:', "%.2f" % acc, '%'
 
 
 """
@@ -391,10 +391,10 @@ def place_guess(index, ship_type_opp):
                 global gameover
                 gameover = True
 
-        # if ai turn, show ai's hits/misses on player board
-        if ship_type_opp == ShipType.player:
-            print 'Your board'
-            show_board(ShipType.player)
+            # if ai turn and they hit, show ai's hits/misses on player board
+            if ship_type_opp == ShipType.player:
+                print 'Your board'
+                show_board(ShipType.player)
 
     else:
         if index is not -2:
