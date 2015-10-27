@@ -13,20 +13,20 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+*.exe
 
 # Windows shortcuts
 *.lnk
 
+#Keys
+*.rsa
+*.pub
+*.crt
+
 # =========================
 # Operating System Files
 # =========================
-
-# OSX
-# =========================
-
-.DS_Store
-.AppleDouble
-.LSOverride
+*.dll
 
 # Thumbnails
 ._*
