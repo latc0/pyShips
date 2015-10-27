@@ -2,7 +2,7 @@ import random
 from enum import Enum
 from colorama import Fore
 
-__author__ = 'sjw2'
+__author__ = 'latc0'
 
 '''Classes'''
 
